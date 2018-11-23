@@ -1,0 +1,16 @@
+{% extends  'polls/base.html' %}
+
+{% block main_content %}
+
+
+    {% if l_qus %}
+        <ul>
+            {% for qus in l_qus %}
+                <li><a href={% url "polls:detail" qus.id %}><b>{{qus.qus_text}}</b></a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You don't have any Qus. please Add some. </p>
+    {% endif %}
+
+{% endblock %}
